@@ -2,7 +2,7 @@
 # make sure you use version >4.4 since NCBI now requires https
 
 # be a good person, start every session by identifying yourself
-econtact -email dan@gmail.com
+econtact -email name@gmail.com
 
 esearch -db gene -query "npc1 AND 9606[TID]"
 

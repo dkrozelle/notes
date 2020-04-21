@@ -1,5 +1,14 @@
 #! /bin/awk -f
 
+# print only selected lines
+# header row and lines 5,6,7,8,9
+awk 'NR==1||(NR<10&&NR>=5)'
+
+# split a file ~50,000 into half with both getting a header row
+awk 'NR==3||(NR>3&&NR<20000)' <GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_tpm.gct >gtex-part1.tsv
+awk 'NR==3||(NR>=20000&&NR<40000)' <GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_tpm.gct >gtex-part2.tsv
+awk 'NR==3||(NR>=40000)' <GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_tpm.gct >gtex-part3.tsv
+
 # 3 ways to effect tab-delimited sepqration of selected columns
 # use the -v variable flag to define environmental variables
 awk -v FS=, -v OFS="\t" '{ print $2,$3 }'

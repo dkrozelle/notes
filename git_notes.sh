@@ -1,5 +1,10 @@
+git checkout -b 2020-01-01_new_branch
+git checkout master
+git merge 2020-01-01_new_branch
+git branch -d 2020-01-01_new_branch
+
 #  to perform a normal commit of all changed files
-cd /Users/danrozelle/Dropbox/prog 
+cd /Users/danrozelle/ex 
 git add -A
 git commit -m "msg"
 git push origin master
@@ -9,7 +14,7 @@ git push origin master
 # install github on your computer
 # https://help.github.com/articles/set-up-git
 git config --global user.name "name"
-git config --global user.email "dan@gmail.com"
+git config --global user.email "name@gmail.com"
 
 # how to create a new github repository and push to github
 
