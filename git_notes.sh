@@ -5,8 +5,8 @@ git branch -d 2020-01-01_new_branch
 
 #  to perform a normal commit of all changed files
 cd /Users/danrozelle/ex 
-git add -A
-git commit -m "msg"
+git add file1.sh file2.sh
+git commit -m "new analysis scripts"
 git push origin master
 
 
