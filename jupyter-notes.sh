@@ -1,8 +1,8 @@
 # setup a conda env with jupyter 
-conda create -n bids python=3.7 ipykernel jupyter
-source activate bids
+conda create -n myenv python=3.7 ipykernel jupyter
+source activate myenv
 conda install -c conda-forge pandas
-python -m ipykernel install --user --name=bids
+python -m ipykernel install --user --name=myenv
 jupyter notebook
 
 # installing packages from inside jupyter
