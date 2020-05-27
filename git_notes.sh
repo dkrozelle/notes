@@ -9,6 +9,19 @@ git add file1.sh file2.sh
 git commit -m "new analysis scripts"
 git push origin master
 
+# create a new branch and push it to origin (remote server)
+git checkout -b new_branch
+git push -u origin new_branch
+
+
+# if master branch is protected, and you want to merge only some of
+# the files in your feature-branch
+git checkout -b partial-commit-branch feature-branch
+# checkout the files from feature-branch to your new partial-commit-branch
+git checkout feature-branch file-we-want-to-merge.sh another-dir/ 
+git add file-we-want-to-merge.sh another-dir/
+git commit -m 'add some files'
+git push -u origin 
 
 ##########################################################
 # install github on your computer
@@ -34,11 +47,12 @@ git commit -m 'first commit'
 git remote add origin https://github.com/dkrozelle/prog.git
 git push origin master
 
+# change a remote url
+git remote set-url origin git@github.com:ranchobiosciences/foo.git
 
 ##########################################################
 # stage removed and moved files
 git add -u
-
 
 ##########################################################
 # remove unimportant previously tracked with github
@@ -86,3 +100,9 @@ git add ./*
 git commit -m 'ignore bibtex'
 git push origin master --force
 
+
+# subdir into it's own repo
+http://alyssafrazee.com/2014/05/01/popping-a-subdirectory.html
+
+# repo subdirectory into another existing repo 
+https://medium.com/@ayushya/move-directory-from-one-repository-to-another-preserving-git-history-d210fa049d4b
