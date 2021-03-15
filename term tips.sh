@@ -1,5 +1,8 @@
 # term tips
 
+sudo usermod -a -G groupName userName
+
+
 # create a screen session, list, and reattach
 screen -L -S name
 	*cmd+a, d to exit
@@ -51,10 +54,6 @@ tar -czvf archive.tar.gz /path
 # extract
 tar -xzvf archive.tar.gz
 
+
 # print just the read line from a compressed fastq
 zcat file_R1.fastq.gz | awk NR%4==2
-
-
-
-
-

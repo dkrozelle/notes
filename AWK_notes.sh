@@ -1,5 +1,8 @@
 #! /bin/awk -f
 
+# append filename column to table and remove header
+find dir -name "*.tsv" | xargs -I{} awk -v fn={} 'NR>1 {print $0,fn}' {}
+
 # print only selected lines
 # header row and lines 5,6,7,8,9
 awk 'NR==1||(NR<10&&NR>=5)'

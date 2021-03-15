@@ -1,5 +1,18 @@
 # Crosstab functionality
 
+### local admin functions ###
+
+sudo -i -u postgres
+psql
+
+\l # list dbs
+
+django postgres
+    pg_dump django >dumpfile
+
+### SQL  ###
+CREATE USER admin WITH PASSWORD 'jw8s0F4';
+
 -- The SELECT must return 3 columns: identifier, category (column name), value
 SELECT id, col, val FROM data ORDER BY 1,2
 
