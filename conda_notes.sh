@@ -2,3 +2,5 @@
 conda create -n myenv python=3.7 pandas 
 conda activate myenv
 conda install -c conda-forge pandas
+
+conda env remove -n myenv
