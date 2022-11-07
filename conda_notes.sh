@@ -18,3 +18,6 @@ RUN conda init bash
 
 # running a script from a conda env
 conda run -n myenv script.sh
+
+
+conda config --add channels bioconda
