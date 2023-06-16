@@ -1,4 +1,7 @@
 
+# merge file from another branch
+git checkout --patch branch2 file.py
+
 # Merge to master
 git checkout -b 2020-01-01_new_branch
 git add ...
