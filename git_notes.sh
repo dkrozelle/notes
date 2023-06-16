@@ -116,6 +116,7 @@ datalad clone /data/another/existing/dataset here
 cd here
 
 # get and unlock files before editing
+datalad get phenotypic-metadata-dictionary.json
 datalad unlock phenotypic-metadata-dictionary.json
 find . -name "*phenotypic-metadata.json" -type l | xargs -I{} datalad get {}
 find . -name "*phenotypic-metadata.json" -type l | xargs -I{} datalad unlock {}
@@ -125,3 +126,6 @@ datalad save -m 'commit message'
 
 # list changed files from a branch
 git diff --name-only branch
+
+# move all uncommitted changes to a new branch
+git switch -c <new-branch>
