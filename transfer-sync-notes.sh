@@ -14,3 +14,6 @@ rsync -POvrT
 rsync -rv --partial --progress -e "ssh -p 2221" danr@ns123.ip-144-217-67.net:/data/derived/
 
 rsync --partial --progress --verbose --recursive --append-verify
+
+sudo lxc list
+sudo lxc file push -r localpath/ server-name/remote/path

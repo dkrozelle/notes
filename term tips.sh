@@ -1,7 +1,14 @@
 # term tips
 
-sudo usermod -a -G groupName userName
+# create clietn group and assign a person to it
+# list all users on a system
+sudo cat /etc/passwd
+sudo groupadd client
+sudo usermod -a -G client danr
 
+# set ownership and permissions to a group of client folders
+sudo chown -R root:client Client/
+sudo chmod -R 770 Client
 
 # create a screen session, list, and reattach
 screen -L -S name
@@ -11,7 +18,7 @@ screen -d -r name
 
 # find will execute grep and will substitute {} with the filename(s) found. The difference between ; and + is that with ; a single grep command for each file is executed whereas with + as many files as possible are given as parameters to grep at once.
 find . -exec grep chrome {} \;
-find . -exec grep chrome {} +
+find . -exec grep chrome {} +p
 # unzip each file
 find /PROJECT/ -type f -name "*gz" -exec gunzip {} \;
 
