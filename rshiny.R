@@ -6,6 +6,10 @@
 # actual shiny server location
 
 
+# needed for deployment on some rstudio instances to force port of preference
+options(shiny.port = 7688,shiny.host = "0.0.0.0")
+
+
 # connect with port forwarding
 ssh -L localhost:7688:localhost:7688 civetta:/srv/shiny-server/WDR5/
 # add to your app.R if necessary
@@ -20,19 +24,19 @@ Rscript app.R
 
 
 
-app     <- "PRISMM Explorer"
+app     <- "App Explorer"
 version <- "0.0.2"
 date    <- "2018-12-04"
 
-# easily place a standardized, versioned rancho footer on a shiny page.
-rancho_footer <- function(app_name=app, version_number=version, version_date=date){
+# easily place a standardized, versioned my footer on a shiny page.
+my_footer <- function(app_name=app, version_number=version, version_date=date){
   shiny::HTML(
     paste0('
            <div class="container footer">
            <span class="text-muted left-foot">Supported by 
-           <a href="http://www.ranchobiosciences.com/">Rancho BioSciences</a>
+           <a href="http://www.google.com/">Company</a>
            </span>
-           <span class="text-muted right-foot">',app_name,', version <a href="https://github.com/CelgeneDataScience/',app_name,'">',version_number,'</a> (',version_date,')</span>
+           <span class="text-muted right-foot">',app_name,', version <a href="https://github.com/organization/',app_name,'">',version_number,'</a> (',version_date,')</span>
            </div>'
     ))
 }

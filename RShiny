@@ -1,2 +1,0 @@
-# needed for deployment on some rstudio instances to force port of preference
-options(shiny.port = 7688,shiny.host = "0.0.0.0")
