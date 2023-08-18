@@ -52,23 +52,6 @@ git commit -m 'revert script to previous version'
 git config --global user.name "name"
 git config --global user.email "name@gmail.com"
 
-# how to create a new github repository and push to github
-
-# cd to the directory you want to include in the repo
-# initialize a new repo
-git init
-
-#create a README file with basic repo info and add info
-touch README
-nano README
-
-# add files to your repo and commit them
-git add README
-git commit -m 'first commit'
-
-# set a remote for your repository and push your commits
-git remote add origin https://github.com/dkrozelle/prog.git
-git push origin master
 
 # change a remote url
 git remote set-url origin git@github.com:ranchobiosciences/foo.git

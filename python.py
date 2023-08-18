@@ -26,3 +26,15 @@ try:
 except:
     print("Something went wrong when opening the file")
     raise Exception("this is a raised exception")
+
+
+## regex and string manupulation
+
+[file.replace("SCC_Spec_Doc_", "") for file in files if file.endswith("xlsx")]
+
+
+## dates
+
+from datetime import datetime
+
+datetime.strptime("06.05.90", "%m.%d.%y")

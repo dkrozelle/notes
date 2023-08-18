@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# The set -e (exit) option causes a script to exit if any of the processes it calls generate a non-zero return code.
+set -e
+
 ##################################################
 # element operations
 
