@@ -36,4 +36,7 @@ These components are shared for all workspaces on this server. Open the visual s
   "r.rterm.linux": "/home/drozelle/.local/bin/radian"
 }
 
-# configure workspace info
+# python code formatting and linting
+
+- install black and pylint locally 
+- 

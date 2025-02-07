@@ -16,7 +16,7 @@ git push
 cd /Users/danrozelle/ex
 git add file1.sh file2.sh
 git commit -m "new analysis scripts"
-git tag 0.1.4 -a -m 'Release with function x fixed'
+git tag v0.1.4 -a -m 'Release with function x fixed'
 git push --tags origin master
 
 # create a new branch and push it to origin (remote server)
@@ -49,8 +49,8 @@ git commit -m 'revert script to previous version'
 ##########################################################
 # install github on your computer
 # https://help.github.com/articles/set-up-git
-git config --global user.name "name"
-git config --global user.email "name@gmail.com"
+git config --global user.name "Dan Rozelle"
+git config --global user.email "dan.rozelle@ranchobiosciences.com"
 
 
 # change a remote url
@@ -115,3 +115,6 @@ git diff --name-only branch
 
 # move all uncommitted changes to a new branch
 git switch -c <new-branch>
+
+# undo a changed file that hadn't been committed/saved yet
+git stash push -- path/to/file 

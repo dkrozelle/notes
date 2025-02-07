@@ -11,7 +11,7 @@ with open("data_file.json", "r") as fh:
 import json
 
 with open("data_file.json", "w") as fh:
-    json.dump(data, fh)
+    json.dump(data, fh, indent=2)
 
 
 ## try catch block
@@ -30,7 +30,15 @@ except:
 
 ## regex and string manupulation
 
-[file.replace("SCC_Spec_Doc_", "") for file in files if file.endswith("xlsx")]
+[
+    filename.replace("SCC_Spec_Doc_", "")
+    for filename in filenames
+    if filename.endswith("xlsx")
+]
+
+import re
+
+re.sub(pattern, repl, string, count=0, flags=0)
 
 
 ## dates
@@ -38,3 +46,30 @@ except:
 from datetime import datetime
 
 datetime.strptime("06.05.90", "%m.%d.%y")
+
+
+# iterate a df by row,
+# create a dict,
+# key comes from the Variable Name column
+# Description field comes from Variable Label
+# for each File field term, write the corresponding dict to a json file
+
+import json
+
+import pandas as pd
+
+dd = pd.read_csv("data.csv")
+
+entries = {}
+current_file = ""
+
+for index, row in dd.iterrows():
+    this_file = row["File"]
+    # this starts a new file, write previous data to file before initializing
+    if current_file != this_file:
+        if current_file != "":
+            with open(f"{current_file}.json", "w") as fh:
+                json.dump(entries, fh, indent=2)
+        current_file = this_file
+        entries = {}
+    entries[row["Variable Name"]] = {"Description": row["Variable Label"]}
